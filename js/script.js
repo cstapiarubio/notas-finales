@@ -1,0 +1,97 @@
+/*Petición de datos*/ 
+
+var nombre= prompt(" Escriba su nombre")
+var apellido= prompt(" Escriba su apellido")
+var carrera= prompt(" Escriba su carrera")
+var notaminima= prompt("Ingresa nota de aprobación asignatura 3")
+var notaminima = parseInt(notaminima)
+
+var asignatura1= prompt("Escriba primera asignatura")
+var notaA11 = prompt("Ingrese 1a nota de la asignatura "+ asignatura1)
+var notaA12 = prompt("Ingrese 2a nota de la asignatura "+ asignatura1)
+var notaA13 = prompt("Ingrese 3a nota de la asignatura "+ asignatura1)
+
+var asignatura2= prompt("Escriba segunda asignatura")
+var notaA21 = prompt("Ingrese 1a nota de la asignatura "+ asignatura2)
+var notaA22 = prompt("Ingrese 2a nota de la asignatura "+ asignatura2)
+var notaA23 = prompt("Ingrese 3a nota de la asignatura "+ asignatura2)
+
+var asignatura3= prompt("Escriba tercera asignatura")
+var notaA31 = prompt("Ingrese 1a nota de la asignatura "+ asignatura3)
+var notaA32 = prompt("Ingrese 2a nota de la asignatura "+ asignatura3)
+
+//promedios de asignaturas
+var promedio1=((parseInt(notaA11)+parseInt(notaA12)+parseInt(notaA13))/3)
+var promedio2=((parseInt(notaA21)+parseInt(notaA22)+parseInt(notaA23))/3)
+
+//promedio ramo 3
+var notafaltante=((notaminima*3)-(parseInt(notaA31))-(parseInt(notaA32)))
+
+//Tabla
+document.write("<h1> Notas finales:</h1>")
+document.write("<h3> Nombre: " +" " +nombre + " " +apellido +"</h3>")
+document.write("<h3> Carrera: " + " " +carrera +"</h3>")
+document.write("<table class='table'><thead class='col-3'><tr class='table-dark'><th scope='col'>Ramo</th> <th scope='col'>Nota 1</th><th scope='col'>Nota 2</th><th scope='col'>Nota 3</th><th scope='col'>Promedio</th>")
+document.write("</tr></thead> ")
+document.write(" <tbody>")
+/* aqui empieza la fila 1*/
+document.write("<tr>")
+document.write("<td>")
+document.write(asignatura1)
+document.write("</td>")
+document.write("<td>")
+document.write(notaA11)
+document.write("</td>")
+document.write("<td>")
+document.write(notaA12)
+document.write("</td>")
+document.write("<td>")
+document.write(notaA13)
+document.write("</td>")
+document.write("<td>")
+document.write(promedio1)
+document.write("</td>")
+document.write("</tr>")
+
+/* aqui empieza fila 2*/
+document.write("<tr>")
+document.write("<td>")
+document.write(asignatura2)
+document.write("</td>")
+document.write("<td>")
+document.write(notaA21)
+document.write("</td>")
+document.write("<td>")
+document.write(notaA22)
+document.write("</td>")
+document.write("<td>")
+document.write(notaA23)
+document.write("</td>")
+document.write("<td>")
+document.write(promedio2)
+document.write("</td>")
+document.write("</tr>")
+
+/* aqui comienza fila 3*/
+document.write("<tr>")
+document.write("<td>")
+document.write(asignatura3)
+document.write("</td>")
+document.write("<td>")
+document.write(notaA31)
+document.write("</td>")
+document.write("<td>")
+document.write(notaA32)
+document.write("</td>")
+document.write("<td>")
+document.write("-")
+document.write("</td>")
+document.write("<td>")
+document.write("-")
+document.write("</td>")
+document.write("</tr>")
+document.write("</tbody>")
+document.write("</table>")
+
+//mensaje de aprobación ramo 3
+document.write("<footer><h3>Para aprobar el ramo de " + asignatura3 + " con nota " + notaminima +" necesitas sacar un " + notafaltante +" en la nota 3 </h3></footer>")
